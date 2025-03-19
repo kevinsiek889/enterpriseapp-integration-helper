@@ -14,7 +14,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-function Login() {
+interface LoginProps {
+  username: string;
+}
+
+function Login({ username }: LoginProps) {
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -37,6 +41,7 @@ function Login() {
                 type="email"
                 autoComplete="username"
                 placeholder="team@mynaui.com"
+                defaultValue={username}
               />
             </div>
             <div className="grid gap-2">
